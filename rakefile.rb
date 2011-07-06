@@ -6,7 +6,7 @@ require 'rake'
 require 'rake/tasklib'
 
 task :default do
-    package_location="sample/"  # website folder location relative to checkout root
+    package_location="sample/package/"  # website folder location relative to checkout root
     project_file =  "sample/sample.csproj" # website project location relative to checkout root
     package_name = "website"
     package = "website.deploy.cmd"
@@ -23,7 +23,7 @@ task :default do
     FileUtils.remove_file("#{package_location}#{package_name}.SourceManifest.xml", true)
 
     # Package website (requires VS2010 version of msbuild)
-    sh "#{msbuild_file} \"#{project_file}\" /maxcpucount /nr:true /v:m /T:Clean,Package /P:BuildInParallel=true;WarningLevel=0;Configuration=debug;DeployIisAppPath=\"#{destination_site}\";PackageLocation=#{package_name}.zip"
+    sh "#{msbuild_file} \"#{project_file}\" /maxcpucount /nr:true /v:m /T:Clean,Package /P:BuildInParallel=true;WarningLevel=0;Configuration=debug;DeployIisAppPath=\"#{destination_site}\";PackageLocation=package/#{package_name}.zip"
 
     # Deploy website (requires Web Deployment service running on web server)
     sh "#{package_location}#{package} /M:localhost /Y \"-skip:objectName=dirPath,skipAction=Delete,absolutePath=logs\""

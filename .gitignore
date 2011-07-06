@@ -26,3 +26,5 @@ _cache\*
 *.dbmdl*
 *.dbproj.*
 sql/
+
+Sample/package	
