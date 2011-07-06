@@ -1,6 +1,6 @@
 ## Sample project used for Boise .NET Developer User Group (netdug.com) Presentation
 
-[Mimicking the AppHarbor Experience](http://elegantcode.com/2011/03/20/mimicking-the-appharbor-deployment-experience/)
+Original Post: [Mimicking the AppHarbor Experience](http://elegantcode.com/2011/03/20/mimicking-the-appharbor-deployment-experience/)
 
 > There is a problem with MSDeploy commands with Visual Studio 2010 SP1
 > If you are using SP1, follow the directions in this KB article:
